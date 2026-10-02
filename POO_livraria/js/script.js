@@ -15,11 +15,11 @@ class Autor{
 }
 
 class Livro{
-    constructor(titulo, ano, autor){
+    constructor(titulo, ano, autor, genero){
         this.titulo = titulo
         this.autor = autor
         this.ano = ano
-        this.genero =genero
+        this.genero = genero
     }
     mostrarInformacoes(){
         // interpolação = mostrar variaveis  no meio da string
@@ -37,6 +37,17 @@ class Estante{
         this.posicao = this.posicao
         this.livros = []
     }
+    addLivros(livro){
+        this.livros.push(livro)
+        
+    }
+    listarLivros(){
+        console.log("-",repeat (20))
+        console.log("Livros da estante " + this.posicao)
+        for (let livro of this.livros){
+            console.log(livro.titulo)
+        }
+    }
 }
 
 
@@ -51,8 +62,15 @@ let livro1 = new Livro("Harry Potter e o Prisioneiro de Askaban", 2000, autor1, 
 let livro2 = new Livro ("O Chamado do Cuco", 2013, autor1, "Misterio")
 let livro3 = new Livro("O Caminho dos Reis", 2010, autor2, "Fantasia")
 
+let estante1 = new Estante ("A5")
+let estante2 = new Estante ("B55")
+
+estante1.addLivros(livro1)
+estante1.addLivros(livro3)
+estante2.addLivros(livro2)
 
 autor1.apresentar()
+
 livro1.mostrarInformacoes()
 livro2.mostrarInformacoes()
 livro3.mostrarInformacoes()

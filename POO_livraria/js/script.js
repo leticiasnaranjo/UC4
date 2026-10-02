@@ -32,6 +32,13 @@ class Livro{
     }
 }
 
+class Estante{
+    constructor(posição){
+        this.posicao = this.posicao
+        this.livros = []
+    }
+}
+
 
 // criando objetos da classe
 let autor1 = new Autor ("JK  Rowling", "Britânica")
